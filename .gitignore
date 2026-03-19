@@ -24,6 +24,3 @@ Desktop.ini
 .idea/
 *.swp
 *.swo
-
-# Output (regenerate with tools)
-output/*.png
