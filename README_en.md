@@ -1,5 +1,7 @@
 # Txt To RPG Map
 
+[English](./README_en.md) | [中文](./README.md)
+
 A tool for generating RPG game maps, supporting both outdoor and indoor scene rendering.
 
 ## Preview
