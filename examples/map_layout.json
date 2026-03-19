@@ -1,0 +1,51 @@
+{
+  "mapName": "森林中的宁静小屋",
+  "tileSize": 32,
+  "width": 20,
+  "height": 15,
+  "defaultTile": "grass",
+  "layers": [
+    {
+      "name": "地面层",
+      "type": "procedural",
+      "rules": [
+        {"type": "rectangle", "tile": "road", "x1": 5, "y1": 4, "x2": 14, "y2": 10},
+        {"type": "circle", "tile": "road", "centerX": 9, "centerY": 7, "radius": 4}
+      ]
+    },
+    {
+      "name": "物体层",
+      "type": "sparse",
+      "data": [
+        {"tile": "house", "x": 3, "y": 3},
+        {"tile": "tree", "x": 2, "y": 2},
+        {"tile": "tree", "x": 15, "y": 2},
+        {"tile": "tree", "x": 3, "y": 11},
+        {"tile": "tree", "x": 16, "y": 10},
+        {"tile": "tree", "x": 12, "y": 3},
+        {"tile": "wood", "x": 4, "y": 8},
+        {"tile": "wood", "x": 17, "y": 5},
+        {"tile": "Street lamp", "x": 9, "y": 4},
+        {"tile": "Street lamp", "x": 11, "y": 9}
+      ]
+    },
+    {
+      "name": "装饰层",
+      "type": "sparse",
+      "data": [
+        {"tile": "flower", "x": 1, "y": 1},
+        {"tile": "flower", "x": 18, "y": 13},
+        {"tile": "flower", "x": 5, "y": 12},
+        {"tile": "Mushroom", "x": 13, "y": 12},
+        {"tile": "Mushroom", "x": 8, "y": 2},
+        {"tile": "wood2", "x": 19, "y": 8},
+        {"tile": "wood2", "x": 14, "y": 1},
+        {"tile": "wood3", "x": 6, "y": 13},
+        {"tile": "wood3", "x": 10, "y": 13},
+        {"tile": "flower", "x": 3, "y": 5},
+        {"tile": "Mushroom", "x": 16, "y": 7},
+        {"tile": "flower", "x": 12, "y": 7}
+      ]
+    }
+  ]
+}

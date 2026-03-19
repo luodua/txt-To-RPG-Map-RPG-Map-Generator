@@ -1,0 +1,109 @@
+# AI 生成 RPG 地图布局方案
+
+## 整体架构
+
+```
+[AI] → JSON布局文件 → [合成程序] → 最终地图图片(.png)
+```
+
+## JSON 格式
+
+```json
+{
+  "mapName": "地图名称",
+  "tileSize": 32,
+  "width": 20,
+  "height": 15,
+  "defaultTile": "grass",
+  "layers": [
+    {
+      "name": "地面层",
+      "type": "procedural",
+      "rules": [
+        {"type": "rectangle", "tile": "road", "x1": 6, "y1": 3, "x2": 12, "y2": 9}
+      ]
+    },
+    {
+      "name": "物体层",
+      "type": "sparse",
+      "data": [
+        {"tile": "house", "x": 2, "y": 2},
+        {"tile": "tree", "x": 10, "y": 1}
+      ]
+    }
+  ]
+}
+```
+
+## 图层类型
+
+- **procedural**: 程序化生成地面，支持矩形、圆形、直线
+- **grid**: 完整二维数组（不推荐，太冗长）
+- **sparse**: 稀疏数组，只列出物体位置
+
+## 程序化规则
+
+### 矩形 (rectangle)
+```json
+{"type": "rectangle", "tile": "road", "x1": 6, "y1": 3, "x2": 12, "y2": 9}
+```
+
+### 圆形 (circle)
+```json
+{"type": "circle", "tile": "water", "centerX": 15, "centerY": 12, "radius": 3}
+```
+
+### 直线 (line)
+```json
+{"type": "line", "tile": "path", "x1": 0, "y1": 0, "x2": 19, "y2": 14}
+```
+
+## 重要规则
+
+1. **同一层内不重叠**: sparse 类型的多个物体在同一层内不能重叠
+2. **按顺序渲染**: 图层按数组顺序渲染，后面图层会覆盖前面
+3. **共享占用检测**: 所有 sparse 层共享占用检测，不同层的物体也不能重叠
+
+## 可用素材
+
+单格 (1x1):
+- grass - 草地
+- flower - 花
+- road - 石板路
+- wood2 - 小木头
+- wood3 - 树桩
+- Mushroom - 蘑菇
+
+多格:
+- house (5x6) - 房子
+- tree (4x5) - 大树
+- wood (1x3) - 木头
+- Street lamp (1x3) - 路灯
+
+## 使用方法
+
+```bash
+# 默认读取 map_layout.json
+python map_renderer.py
+
+# 指定其他 JSON 文件
+python map_renderer.py my_map.json
+```
+
+输出文件: `output_map.png`
+
+## AI 提示词示例
+
+```
+生成一个RPG地图的JSON布局，20x15大小。
+
+要求：
+1. 地面默认是grass
+2. 在地图中间用road画一个矩形区域作为道路
+3. 地图中央放置一个房子(house)
+4. 房子周围放置3-5棵树木(tree)，不能与房子重叠
+5. 地图边缘放置一些装饰物(flower, Mushroom, wood2, wood3)
+6. 不要让任何物体重叠
+
+输出完整的JSON格式。
+```

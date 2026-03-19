@@ -1,0 +1,17 @@
+{
+  "mapName": "test",
+  "tileSize": 32,
+  "width": 12,
+  "height": 10,
+  "defaultTile": "室内石砖地板",
+  "layers": [
+    {
+      "name": "装饰地板",
+      "type": "procedural",
+      "rules": [
+        {"type": "rectangle", "tile": "室内墙", "x1": 0, "y1": 0, "x2": 11, "y2": 0},
+        {"type": "rectangle", "tile": "室内红砖地板", "x1": 4, "y1": 4, "x2": 7, "y2": 7}
+      ]
+    }
+  ]
+}

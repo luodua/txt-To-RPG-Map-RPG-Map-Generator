@@ -1,0 +1,12 @@
+可用素材:
+  flower (1x1)
+  grass (1x1)
+  house (5x6)
+  road (1x1)
+  tree (4x5)
+  wood (1x3)
+  树桩 (1x1)
+  树桩2 (1x1)
+  花2 (1x1)
+  蘑菇 (1x1)
+  路灯 (1x3)

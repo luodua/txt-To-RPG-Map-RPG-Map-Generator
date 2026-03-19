@@ -1,0 +1,36 @@
+{
+  "mapName": "室内场景",
+  "tileSize": 32,
+  "width": 12,
+  "height": 10,
+  "defaultTile": "室内地板",
+  "layers": [
+    {
+      "name": "地面层",
+      "type": "procedural",
+      "rules": [
+        {
+          "type": "rectangle",
+          "tile": "室内墙",
+          "x1": 0,
+          "y1": 0,
+          "x2": 11,
+          "y2": 0
+        }
+      ]
+    },
+    {
+      "name": "家具层",
+      "type": "sparse",
+      "data": [
+        {"tile": "室内床", "x": 1, "y": 1},
+        {"tile": "室内杂物柜", "x": 8, "y": 1},
+        {"tile": "室内桌子", "x": 1, "y": 5},
+        {"tile": "室内椅子", "x": 2, "y": 5},
+        {"tile": "室内钢琴", "x": 5, "y": 5},
+        {"tile": "室内镜子", "x": 10, "y": 1},
+        {"tile": "室内窗户", "x": 5, "y": 0}
+      ]
+    }
+  ]
+}
