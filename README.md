@@ -205,6 +205,4 @@ Use the prompt files in `prompts/` directory with AI to generate map layout JSON
 - Supported formats: PNG, JPG, BMP
 - Multi-tile objects: Automatically calculated based on image size
 
-## License
 
-MIT License
