@@ -420,6 +420,3 @@ def discover_assets(asset_dir):
 ### 结论
 Txt To RPG Map 在保持高质量输出的同时，相比传统手动编辑方案提供**20-40倍的效率提升**。通过AI辅助生成和程序化渲染，将数小时的工作压缩到几分钟内完成。
 
-## 许可证
-
-MIT License
